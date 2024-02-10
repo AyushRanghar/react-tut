@@ -1,28 +1,25 @@
-import { Route, Routes } from "react-router-dom";
-import "./global.css";
-import SigninForm from "./_auth/forms/SigninForm";
-import { Home } from "./root/pages";
-import SignupForm from "./_auth/forms/SignupForm";
-import AuthLayout from "./_auth/forms/AuthLayout";
-import RootLayout from "./root/RootLayout";
+import { useState } from "react";
+import "./App.css";
+import Card from "./components/Card";
+import "./index.css";
 
-const App = () => {
+function App() {
+  const [counter, setCounter] = useState(15);
+  // Set counter returns a callback
+  const addButton = () => {
+    setCounter((prevCounter) => prevCounter + 1);
+  };
+
   return (
-    <main className="flex h-screen">
-      <Routes>
-        {/* public routes */}
-        <Route element={<AuthLayout />}>
-          <Route path="/sign-in" element={<SigninForm />} />
-          <Route path="/sign-up" element={<SignupForm />} />
-        </Route>
-
-        {/* private routes */}
-        <Route element={<RootLayout />}>
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
-    </main>
+    <>
+      <button onClick={addButton}>Add Btn{counter}</button>
+      <h1 className="bg-green-400 text-black p-4 rounded-xl mb-4">
+        Tailwind test
+      </h1>
+      <Card name="Ayush" age={21} buttonText="Hey yo" />
+      <Card name="Tony" age={56} buttonText="View Profile" />
+    </>
   );
-};
+}
 
 export default App;
