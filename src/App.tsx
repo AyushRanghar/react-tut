@@ -16,8 +16,8 @@ function App() {
       <h1 className="bg-green-400 text-black p-4 rounded-xl mb-4">
         Tailwind test
       </h1>
-      <Card name="Ayush" age={21} buttonText="Hey yo" />
-      <Card name="Tony" age={56} buttonText="View Profile" />
+      <Card name="Ayush" age={21} buttonText="Hey yo" iconSize={"sm"} />
+      <Card name="Tony" age={56} buttonText="View Profile" iconSize={"xl"} />
     </>
   );
 }

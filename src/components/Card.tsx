@@ -1,11 +1,14 @@
+import { IconSize } from "../Typescript/looseAutocomplete";
+
 interface CardProps {
   name: string;
   age: number;
   buttonText?: string;
+  iconSize?: IconSize;
 }
 
 const Card = (userData: CardProps) => {
-  const { name, age, buttonText = "View Profile →" } = userData; // Setting default value for buttonText
+  const { name, age, buttonText = "View Profile →", iconSize } = userData; // Setting default value for buttonText
 
   return (
     <div className="relative h-[400px] w-[300px] rounded-md">
@@ -19,7 +22,7 @@ const Card = (userData: CardProps) => {
         <h1 className="text-lg font-semibold text-white">{name}</h1>
         <p className="mt-2 text-sm text-gray-300">I am {age} years Old</p>
         <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
-          {buttonText}
+          {buttonText} {iconSize}
         </button>
       </div>
     </div>
