@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useCurrencyInfo from "./useCurrencyInfo";
-import { InputBox } from "../components";
+import InputBox from "./InputBox";
 
 interface CurrencyInfo {
   [key: string]: number; // Index signature for string keys with values of type number
